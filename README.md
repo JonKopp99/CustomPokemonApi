@@ -4,7 +4,7 @@ A huge issue in this world is that not everyone can own a Pokemon.... With this 
 
 ## Structure
 
-Every Pokemon gets certain attributes
+Every Pokemon gets certain attributes!
 
  1. Name : String
  2. Type : String
