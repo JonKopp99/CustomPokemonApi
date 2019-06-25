@@ -1,0 +1,13 @@
+:root {
+  --base-font-family: 'Fira Sans', sans-serif;
+  --base-font-weight: 400;
+  --base-color: white;
+  --base-font-size: 18px;
+
+  --heading-color: #ff13e7;
+  --heading-font-size: 10px;
+
+
+  --sidebar-width: 14rem;
+
+}
