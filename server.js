@@ -39,9 +39,9 @@ app.use(checkAuth);
 const Post = require('./models/post');
 
 
-app.get("/n/:subreddit", function (req, res) {
+app.get("/n/:level", function (req, res) {
     var currentUser = req.user;
-    Post.find({ subreddit: req.params.subreddit }).lean()
+    Post.find({ level: req.params.level }).lean()
         .then(posts => {
             res.render("posts-index", { posts, currentUser });
         })

@@ -5,7 +5,6 @@
     background-color: #494848';
 ">
   <div class=""style='background-color: transparent'>
-    <ul>
       {{#each posts}}
       <li class="list-group-item"style='background-color: #494848'>
         <div class="lead"><div>
@@ -14,8 +13,8 @@
         </div>
             <img src="{{this.url}}" class="img-fluid" alt="Responsive image">
         <div class = "text-light">
-            <h6>{{this.author.username}}</h6>
-            <a class="text-right text-muted">{{this.subreddit}}</a>
+            <h6>Level: {{this.level}}</h6>
+            <a class="text-right text-muted">Owner: {{this.author.username}}</a>
         </div>
 
 
