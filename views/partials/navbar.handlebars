@@ -1,0 +1,28 @@
+<!-- views/partials/navbar.handlebars -->
+
+<nav class="navbar navbar-default">
+
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+            <a class="text-white font-weight-bold navbar-brand" href="/">
+                <h1>PokemonAPI <img src="https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG" style= "width: 100px; height: 100px" class="img-fluid" alt="Responsive image">
+            </a><h1>
+        </div>
+        <div class="pull-right">
+            <ul class="nav navbar-nav navbar-right">
+          {{#if currentUser}}
+            <li><a class="text-white "href="/a/logout">Logout</a></li>
+          {{else}}
+            <li><a class="text-white "href="/a/login">Login</a></li>
+            <li><a class="text-white" href="/a/sign-up">Sign Up</a></li>
+          {{/if}}
+        </ul>
+            {{#if currentUser}}
+                <a href="/posts/new" class="btn btn-primary navbar-btn"> Create Pokemon</a>
+            {{/if}}
+        </div>
+
+    </div>
+
+</nav>

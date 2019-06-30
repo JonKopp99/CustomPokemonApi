@@ -1,0 +1,26 @@
+<div class="row justify-content-md-center"style="
+    width: auto;
+    margin: 0 auto;
+    padding: 30px 0;
+    background-color: #494848';
+">
+  <div class=""style='background-color: transparent'>
+    <ul>
+      {{#each posts}}
+      <li class="list-group-item"style='background-color: #494848'>
+        <div class="lead"><div>
+          <a href="/posts/{{this._id}}" class="lead"> {{this.title}}</a>
+          <a class="text-right text-info font-italic"> - {{this.summary}}</a>
+        </div>
+            <img src="{{this.url}}" class="img-fluid" alt="Responsive image">
+        <div class = "text-light">
+            <h6>{{this.author.username}}</h6>
+            <a class="text-right text-muted">{{this.subreddit}}</a>
+        </div>
+
+
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
