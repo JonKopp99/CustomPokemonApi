@@ -66,8 +66,8 @@ app.get('/', (req, res) => {
 app.use('/a', theauth)
 
 app.use('/pokemons', pokemons)
-
-app.listen(3000, () => {
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
     console.log('App listening on port 3000!')
 })
 module.exports = app;

@@ -4,7 +4,7 @@ assert = require("assert");
 
 const url = "mongodb://localhost/pokemon-db";
 mongoose.Promise = global.Promise;
-mongoose.connect(
+mongoose.connect(process.env.MONGODB_URI ||
   "mongodb://localhost/pokemon-db",
   { useNewUrlParser: true },
   function(err, db) {
