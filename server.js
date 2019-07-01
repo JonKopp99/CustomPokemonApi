@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const express = require('express')
 const expressValidator = require('express-validator');
 const app = express()
-const posts = require('./controllers/posts');
+const pokemons = require('./controllers/pokemons');
 const comments = require('./controllers/comments.js')(app);
 const theauth = require('./controllers/auth');
 var cookieParser = require('cookie-parser');
@@ -36,14 +36,14 @@ var checkAuth = (req, res, next) => {
   next();
 };
 app.use(checkAuth);
-const Post = require('./models/post');
+const Pokemon = require('./models/pokemon');
 
 
 app.get("/n/:level", function (req, res) {
     var currentUser = req.user;
-    Post.find({ level: req.params.level }).lean()
-        .then(posts => {
-            res.render("posts-index", { posts, currentUser });
+    Pokemon.find({ level: req.params.level }).lean()
+        .then(pokemons => {
+            res.render("pokemons-index", { pokemons, currentUser });
         })
         .catch(err => {
             console.log(err);
@@ -53,9 +53,9 @@ app.get('/', (req, res) => {
         var currentUser = req.user;
         // res.render('home', {});
         console.log(req.cookies);
-        Post.find().populate('author')
-        .then(posts => {
-            res.render('posts-index', { posts, currentUser });
+        Pokemon.find().populate('author')
+        .then(pokemons => {
+            res.render('pokemons-index', { pokemons, currentUser });
             // res.render('home', {});
         }).catch(err => {
             console.log(err.message);
@@ -65,7 +65,7 @@ app.get('/', (req, res) => {
 
 app.use('/a', theauth)
 
-app.use('/posts', posts)
+app.use('/pokemons', pokemons)
 
 app.listen(3000, () => {
     console.log('App listening on port 3000!')

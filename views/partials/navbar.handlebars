@@ -12,14 +12,16 @@
         <div class="pull-right">
             <ul class="nav navbar-nav navbar-right">
           {{#if currentUser}}
+          <li><a class="text-white "href="/a/logout">Welcome back {{currentUser.username}}!</a></li>
             <li><a class="text-white "href="/a/logout">Logout</a></li>
           {{else}}
+
             <li><a class="text-white "href="/a/login">Login</a></li>
             <li><a class="text-white" href="/a/sign-up">Sign Up</a></li>
           {{/if}}
         </ul>
             {{#if currentUser}}
-                <a href="/posts/new" class="btn btn-primary navbar-btn"> Create Pokemon</a>
+                <a href="/pokemons/new" class="btn btn-primary navbar-btn"> Create Pokemon</a>
             {{/if}}
         </div>
 

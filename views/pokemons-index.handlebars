@@ -5,11 +5,13 @@
     background-color: #494848';
 ">
   <div class=""style='background-color: transparent'>
-      {{#each posts}}
+      {{#each pokemons}}
+      <a href="/pokemons/{{this._id}}/delete" class="text-right text-danger"> X </a>
       <li class="list-group-item"style='background-color: #494848'>
         <div class="lead"><div>
-          <a href="/posts/{{this._id}}" class="lead"> {{this.title}}</a>
+          <a href="/pokemons/{{this._id}}" class="lead"> {{this.title}}</a>
           <a class="text-right text-info font-italic"> - {{this.summary}}</a>
+
         </div>
             <img src="{{this.url}}" class="img-fluid" alt="Responsive image">
         <div class = "text-light">

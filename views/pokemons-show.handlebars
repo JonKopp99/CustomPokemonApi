@@ -6,22 +6,25 @@
 ">
   <div class="col-sm-6 col-sm-offset-3">
     <div class ="text-center text-primary">
-    <h1>{{post.title}}</a></h1>
-    <img src="{{post.url}}" class="img-fluid" alt="Responsive image">
+    <h1>{{Post.title}}</a></h1>
+    <img src="{{Pokemon.url}}" class="img-fluid" alt="Responsive image">
 </div>
     <div class="text-info text-center">
-    <h4>Description: {{post.summary}}</h4>
+    <h4>Description: {{Pokemon.summary}}</h4>
     </div>
-    <div class="text-muted text-left">Owner: {{post.author.username}}
+    <div class="text-muted text-left">Owner: {{Pokemon.author.username}}
     <div class = "text-light">
-        <h6>Level: {{post.level}}</h6>
-    <form action="/posts/{{post._id}}/comments" method="post">
+        <h6>Level: {{Pokemon.level}}</h6>
+        {{#if currentUser}}
+    <form action="/pokemons/{{Pokemon._id}}/comments" method="post">
     <textarea class='form-control' name="content" placeholder="Comment"></textarea>
+
     <div class="text-right">
       <button type="submit" class="btn btn-primary">Save</button>
-      {{#each post.comments}}
-  {{> comment comment=this postId=../post._id}}
+      {{#each Pokemon.comments}}
+  {{> comment comment=this PokemonId=../Pokemon._id}}
 {{/each}}
+{{/if}}
   </form>
   </div>
 </div>
